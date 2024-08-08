@@ -16,7 +16,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  Widget _selectedScreen = const UploadBannersScreen();
+  Widget _selectedScreen = const CategoriesScreen();
 
   void screenSelector(item) {
     switch (item.route) {
@@ -103,7 +103,7 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icons.store,
           ),
         ],
-        selectedRoute: "bannersScreen.id",
+        selectedRoute: "categoryScreen.id",
         onSelected: (item) {
           screenSelector(item);
         },

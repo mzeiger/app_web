@@ -1,5 +1,6 @@
 import 'package:app_web/controllers/category_controller.dart';
 import 'package:app_web/services/manage_http_response.dart';
+import 'package:app_web/views/side_bar_screens.dart/widgets/category_widget.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -52,14 +53,15 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             firstDivision(), // The "Categories" heading
-      
+
             divider(),
-      
+
             secondDivision(),
-      
+
             // thirdDivision(),
-      
+
             divider(),
+            const CategoryWidget(),
           ],
         ),
       ),
@@ -119,7 +121,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               width: 300,
-              child: TextFormField(  // Category Name
+              child: TextFormField(
+                // Category Name
                 controller: _textEditingController,
                 onChanged: (value) => _categoryName = value,
                 validator: (value) {
@@ -191,10 +194,12 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 71, 98, 235)),
 
-                child: !_isloading ? const Text(
-                  'Save',
-                  style: TextStyle(color: Colors.white),
-                ) : const CircularProgressIndicator(color: Colors.red),
+                child: !_isloading
+                    ? const Text(
+                        'Save',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    : const CircularProgressIndicator(color: Colors.red),
               ),
             ],
           ),

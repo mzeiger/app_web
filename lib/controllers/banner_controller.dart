@@ -42,7 +42,6 @@ class BannerController {
           "Content-Type": "application/json; charset=UTF-8"
         },
       );
-      print(response.body);
       if (response.statusCode == 200) {
         List<dynamic> data = jsonDecode(response.body);
         List<BannerModel> banners =
@@ -52,7 +51,6 @@ class BannerController {
         throw Exception('Failed to load banners');
       }
     } catch (e) {
-      print('$e');
       throw Exception('Error from "Catch" loading banners: $e');
     }
   }
